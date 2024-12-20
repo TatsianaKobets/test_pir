@@ -1,4 +1,4 @@
-package com.example.test_pir;
+package com.example.testpir;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;

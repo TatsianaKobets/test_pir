@@ -1,4 +1,4 @@
-package com.example.test_pir;
+package com.example.testpir;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
