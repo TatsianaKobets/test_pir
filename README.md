@@ -23,6 +23,6 @@ Cделать dockerfile, запуск базы данных и api через d
 http://localhost:8080/swagger-ui.html 
 
 Тестовый пользователь:
-* login - admin 
-* password/token - смотреть в бд)
+* login/password - регистрация, 
+* token - получаем при авторизации (смотреть в Postman)
 
