@@ -1,4 +1,4 @@
-package com.example.testpir.service;
+package com.example.testpir.service.impl;
 
 import com.example.testpir.entity.User;
 import com.example.testpir.repository.UserRepository;
@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsServiceImpl implements UserDetailsService {
 
   @Autowired
   private UserRepository userRepository;

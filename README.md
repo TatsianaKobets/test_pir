@@ -24,4 +24,5 @@ http://localhost:8080/swagger-ui.html
 
 Тестовый пользователь:
 * login - admin 
-* password/token - $2a$10$RqFbQnBkZjwKXU3Q5g4K8OvVh2lq3B3B9hLmVj9QXtVrFqHl7P8O
+* password/token - смотреть в бд)
+

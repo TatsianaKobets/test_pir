@@ -1,6 +1,6 @@
 package com.example.testpir.config;
 
-import com.example.testpir.service.CustomUserDetailsService;
+import com.example.testpir.service.impl.CustomUserDetailsServiceImpl;
 import com.example.testpir.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -22,7 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
   @Autowired
-  private CustomUserDetailsService customUserDetailsService;
+  private CustomUserDetailsServiceImpl customUserDetailsServiceImpl;
 
   @Autowired
   private JwtUtil jwtUtil;
@@ -64,6 +64,6 @@ public class SecurityConfig {
 
   @Bean
   public JwtRequestFilter jwtRequestFilter() {
-    return new JwtRequestFilter(jwtUtil, customUserDetailsService);
+    return new JwtRequestFilter(jwtUtil, customUserDetailsServiceImpl);
   }
 }

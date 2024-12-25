@@ -1,6 +1,6 @@
 package com.example.testpir.config;
 
-import com.example.testpir.service.CustomUserDetailsService;
+import com.example.testpir.service.impl.CustomUserDetailsServiceImpl;
 import com.example.testpir.util.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -26,7 +26,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
   private JwtUtil jwtUtil;
 
   @Autowired
-  private CustomUserDetailsService customUserDetailsService;
+  private CustomUserDetailsServiceImpl customUserDetailsServiceImpl;
 
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
@@ -45,7 +45,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
     if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-      UserDetails userDetails = this.customUserDetailsService.loadUserByUsername(username);
+      UserDetails userDetails = this.customUserDetailsServiceImpl.loadUserByUsername(username);
 
       if (jwtUtil.validateToken(jwt, userDetails)) {
 
