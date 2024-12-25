@@ -17,3 +17,5 @@ Cделать dockerfile, запуск базы данных и api через d
 На усмотрение кандидата реализовать security.
 
 Используемые технологии: Spring 3+, PostgreSQL, Liquibase, Docker.
+
+http://localhost:8080/swagger-ui.html тестовый пользователь admin token $2a$10$RqFbQnBkZjwKXU3Q5g4K8OvVh2lq3B3B9hLmVj9QXtVrFqHl7P8O

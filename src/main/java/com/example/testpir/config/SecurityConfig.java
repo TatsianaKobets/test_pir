@@ -16,7 +16,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -27,6 +26,14 @@ public class SecurityConfig {
 
   @Autowired
   private JwtUtil jwtUtil;
+
+  private static final String[] SWAGGER_WHITELIST = {
+      "/swagger-ui/**",
+      "/v3/api-docs/**",
+      "/swagger-resources/**",
+      "/swagger-resources",
+      "/swagger-ui.html"
+  };
 
   @Bean
   public PasswordEncoder passwordEncoder() {
@@ -44,6 +51,7 @@ public class SecurityConfig {
     http
         .csrf(csrf -> csrf.disable())
         .authorizeHttpRequests(auth -> auth
+            .requestMatchers(SWAGGER_WHITELIST).permitAll() 
             .requestMatchers("/api/register", "/api/login").permitAll()
             .anyRequest().authenticated())
         .sessionManagement(sessionManagementConfigurer -> sessionManagementConfigurer

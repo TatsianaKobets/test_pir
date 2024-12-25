@@ -1,6 +1,5 @@
 package com.example.testpir.config;
 
-
 import com.example.testpir.service.CustomUserDetailsService;
 import com.example.testpir.util.JwtUtil;
 import jakarta.servlet.FilterChain;
@@ -17,7 +16,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 
 @Component
 @AllArgsConstructor
